@@ -338,20 +338,20 @@ resource "azurerm_network_interface" "client01" {
 
 # Attach NSG to each NIC; without this the NSG exists but applies to nothing
 resource "azurerm_network_interface_security_group_association" "dc01" {
-  network_interface_id      = azurerm_network_interface.dc01.id
-  network_security_group_id = azurerm_network_security_group.nsg.id
+  network_interface_id       = azurerm_network_interface.dc01.id
+  network_security_group_id  = azurerm_network_security_group.nsg.id
   depends_on                 = [time_sleep.wait_after_nsg]
 }
 
 resource "azurerm_network_interface_security_group_association" "fs01" {
-  network_interface_id      = azurerm_network_interface.fs01.id
-  network_security_group_id = azurerm_network_security_group.nsg.id
+  network_interface_id       = azurerm_network_interface.fs01.id
+  network_security_group_id  = azurerm_network_security_group.nsg.id
   depends_on                 = [time_sleep.wait_after_nsg]
 }
 
 resource "azurerm_network_interface_security_group_association" "client01" {
-  network_interface_id      = azurerm_network_interface.client01.id
-  network_security_group_id = azurerm_network_security_group.nsg.id
+  network_interface_id       = azurerm_network_interface.client01.id
+  network_security_group_id  = azurerm_network_security_group.nsg.id
   depends_on                 = [time_sleep.wait_after_nsg]
 }
 
@@ -493,7 +493,7 @@ resource "azurerm_key_vault_secret" "admin_password" {
   depends_on   = [azurerm_role_assignment.kv_deployer_access]
 
   tags = {
-    ManagedBy = "Terraform"
+    ManagedBy  = "Terraform"
   }
 }
 ```
