@@ -16,15 +16,15 @@ Only one inbound rule exists on the NSG: TCP 3389 (RDP) from your own IP. Everyt
 ## Repository structure
 
 ```
-ntfs-lab-terraform/
-├── README.md                   # This file: overview and architecture
-├── SOP.md                       # Full copy-paste build guide: every file, every command
-├── backend.tf                   # Remote state config (azurerm backend)
-├── versions.tf                  # Provider version constraints
-├── variables.tf                 # Input variable declarations
-├── terraform.tfvars.example    # Template for your own tfvars
-├── terraform.tfvars            # Your actual values (gitignored, do not commit)
-├── main.tf                      # RG, VNet, subnet, NSG, NICs, public IPs, VMs
+ntfs-lab-terraform/ 
+├── README.md                     # This file: overview and architecture
+├── SOP.md                        # Full copy-paste build guide: every file, every command
+├── backend.tf                    # Remote state config (azurerm backend)
+├── versions.tf                   # Provider version constraints
+├── variables.tf                  # Input variable declarations
+├── terraform.tfvars.example      # Template for your own tfvars
+├── terraform.tfvars              # Your actual values (gitignored, do not commit)
+├── main.tf                       # RG, VNet, subnet, NSG, NICs, public IPs, VMs
 ├── keyvault.tf                   # Key Vault + RBAC role assignment + secret
 ├── outputs.tf                    # Public IPs, DC01 private IP, Key Vault name
 ├── configure-lab.ps1             # Orchestrates all post-deployment scripts
