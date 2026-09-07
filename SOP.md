@@ -382,12 +382,12 @@ resource "azurerm_windows_virtual_machine" "dc01" {
 
 # FS01: Windows Server 2022
 resource "azurerm_windows_virtual_machine" "fs01" {
-  name                = "FS01"
-  location            = var.location
-  resource_group_name = azurerm_resource_group.rg.name
-  size                = var.server_vm_size
-  admin_username      = var.admin_username
-  admin_password      = var.admin_password
+  name                  = "FS01"
+  location              = var.location
+  resource_group_name   = azurerm_resource_group.rg.name
+  size                  = var.server_vm_size
+  admin_username        = var.admin_username
+  admin_password        = var.admin_password
   network_interface_ids = [azurerm_network_interface.fs01.id]
 
   os_disk {
@@ -407,12 +407,12 @@ resource "azurerm_windows_virtual_machine" "fs01" {
 
 # CLIENT01: Windows 11 Pro (ships with RDP disabled by default; fixed by the extension below)
 resource "azurerm_windows_virtual_machine" "client01" {
-  name                = "CLIENT01"
-  location            = var.location
-  resource_group_name = azurerm_resource_group.rg.name
-  size                = var.client_vm_size
-  admin_username      = var.admin_username
-  admin_password      = var.admin_password
+  name                  = "CLIENT01"
+  location              = var.location
+  resource_group_name   = azurerm_resource_group.rg.name
+  size                  = var.client_vm_size
+  admin_username        = var.admin_username
+  admin_password        = var.admin_password
   network_interface_ids = [azurerm_network_interface.client01.id]
 
   os_disk {
